@@ -3,7 +3,7 @@ import { ColorList } from "./components/ColorPalette";
 
 /* Import Animation to Build */
 
-import frames from "./animations/Bird";
+import frames from "./animations/RunningMan";
 
 /* simple deep clone function */
 export const clone = array => {

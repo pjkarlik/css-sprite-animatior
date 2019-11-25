@@ -1,14 +1,14 @@
 ![travis ci build](https://travis-ci.org/pjkarlik/react-matrix.svg?branch=master&style=flat-square)
 
-![splash](./splash.png)
+![splash](./splash.gif)
 
-![react](https://img.shields.io/badge/react-16.4.1-green.svg?style=flat-square)
+![react](https://img.shields.io/badge/react-16.8.6-green.svg?style=flat-square)
 ![webpack](https://img.shields.io/badge/webpack-4.10.2-51b1c5.svg?style=flat-square)
 ![stage-0](https://img.shields.io/badge/ECMAScript-6-c55197.svg?style=flat-square)
 
 # CSS Sprite Animator
 
-CSS `box-shadow` pixel animation editor using React. Using state to edit, design and create pixel animations. I created this tool to model animations for Arduino/LED matrix displays. Props allow you to change dimentions, pixel size and palettes.
+CSS `box-shadow` pixel animation editor using React 16. Using state to edit, design and create pixel animations. I created this tool to model animations for Arduino/LED matrix displays. Props allow you to change dimentions, pixel size and palettes.
 
 Each frame is saves as an 1D array, with each pixel in a continous _(x/y/color)_ object. That data is then turned into an inline CSS style which is applied to a DIV or other DOM element.
 
