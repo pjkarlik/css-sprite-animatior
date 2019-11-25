@@ -1,0 +1,243 @@
+@import (reference) "./Vars.less";
+
+.mandp {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container,
+.appcontainer {
+  .mandp();
+  margin: auto;
+  position: relative;
+}
+
+.appcontainer {
+  padding: 40px;
+}
+
+.box {
+  display: inline-block;
+  height: @size;
+  text-indent: -99999px;
+  width: @size;
+  outline: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  appearance: none;
+
+  &:hover {
+    border: 1px solid @color-border;
+    cursor: pointer;
+  }
+  &.transparent {
+    background: url("../../resources/images/check.png") !important;
+  }
+  &.plt {
+    width: 16px;
+    height: 16px;
+    border: 1px solid @color-border;
+    margin: 4px;
+    &:hover {
+      border: 1px solid transparent;
+      outline: 3px dotted @color-border;
+    }
+    &.active {
+      border: 1px solid transparent;
+      box-shadow: 0px 0px 4px 2px @color-outline;
+    }
+  }
+}
+
+.row {
+  .mandp();
+}
+
+.pixelrow {
+  .mandp();
+  .fontNull();
+  height: @pxsize;
+}
+
+.canvas {
+  box-shadow: 0 0 6px 3px #666;
+  h5 {
+    margin: auto;
+    text-align: center;
+  }
+  .mandp();
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.preview {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 3px 3px rgb(50, 50, 50);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  vertical-align: top;
+}
+.framescontainer {
+  margin: 20px auto;
+}
+
+.frame {
+  border: 1px solid @color-border;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  outline: 0;
+  appearance: none;
+  padding: 5px;
+  margin: 10px 10px 0 0;
+  &.active {
+    box-shadow: 0px 0px 4px 2px @color-outline;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  &:hover {
+    border: 1px dotted @color-border;
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// to sort //
+
+.visibleBox {
+  border: 1px solid @color-border;
+  box-sizing: border-box;
+  border-radius: 0.5px;
+}
+
+.spaceBox {
+  padding: 10px;
+  margin: 16px;
+}
+
+.fontNull {
+  font-size: 0px;
+  letter-spacing: 0px;
+  word-spacing: 0px;
+}
+
+.animationcontainer {
+  display: inline-block;
+  margin-left: 20px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.display {
+  display: block;
+  padding: 0;
+  margin: 20px 0 0;
+  font-size: 12px;
+}
+
+.controls {
+  border-bottom: 1px solid @color-border;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  padding: 0;
+  margin: 0 0 20px 0;
+  li {
+    border-right: 1px dotted @color-border;
+    box-sizing: border-box;
+    display: inline-block;
+    flex: 1;
+
+    a.links {
+      box-sizing: border-box;
+      display: block;
+      flex: none;
+      overflow: hidden;
+      padding: 0.313rem 0 0.525rem;
+      transform: perspective(0px) translateZ(0);
+      text-align: center;
+
+      &:before {
+        background: @color-border;
+        border-radius: 0;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        transform: scaleY(0);
+        transform-origin: 50% 100%;
+        transition: transform 200ms cubic-bezier(0.42, 0, 0.58, 1);
+        z-index: -1;
+      }
+    }
+    a.links:hover {
+      color: @color-fill;
+      &:before {
+        transform: scaleY(1);
+      }
+    }
+  }
+  li:last-child {
+    border-right: 0;
+  }
+}
+
+.palette {
+  display: inline-block;
+  margin: 20px;
+  width: 53px;
+  vertical-align: top;
+}
+
+.framebox {
+  border: 1px dotted @color-border;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 8px 5px 3px 5px;
+  padding: 1px;
+  position: relative;
+  &.active {
+    border: 4px solid @color-outline;
+    margin: 5px 2px 1px 2px;
+  }
+  &:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.delete {
+  border-radius: 50%;
+  background-color: @color-danger;
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+  top: -13px;
+  left: -7px;
+  color: @color-fill;
+  position: absolute;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@pxsize: 3px;
+
+.pixel {
+  box-sizing: border-box;
+  display: inline-block;
+  height: @pxsize;
+  width: @pxsize;
+}
+.pixelrow {
+  .mandp();
+  .fontNull();
+  box-sizing: border-box;
+  height: @pxsize;
+}

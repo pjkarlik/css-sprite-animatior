@@ -1,0 +1,15 @@
+language: node_js
+
+node_js:
+  - "8.12"
+
+script:
+  - rm -rf dist
+  - npm run webpack
+
+deploy:
+  provider: surge
+  project: ./dist/
+  domain: react-matrix.surge.sh
+
+  skip_cleanup: true

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{vars.title}}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    {{{vars.newRelic}}}
+    {{{webpackPublicPath}}}
+    {{{webpackManifest}}}
+    {{#webpackCss}}
+    {{{.}}}
+    {{/webpackCss}}
+    <link rel="icon" type="image/png" href="{{vars.assetRoot}}images/favicon.ico">
+</head>
+<body>
+  <div id = "react-mount">{{{vars.htmlContent}}}</div>
+  {{#webpackEntry}}
+  {{{.}}}
+  {{/webpackEntry}}
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+    {{{webpackPublicPath}}}
+    {{{webpackManifest}}}
+    <link rel="icon" type="image/png" href="{{vars.assetRoot}}images/favicon.ico">
+    {{#webpackCss}}
+    {{{.}}}
+    {{/webpackCss}}
+  <div id = "{{{vars.targetDivId}}}">{{{vars.targetDivContent}}}</div>
+  {{#webpackEntry}}
+  {{{.}}}
+  {{/webpackEntry}}
