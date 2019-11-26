@@ -20,7 +20,7 @@ const FramesWindow = (props) => {
   };
 
   return (
-    <ul className={ClassStyles.container}>
+    <ul className={ClassStyles.framescontainer}>
       {frames.map((frame, index) => {
         return (
           <li
