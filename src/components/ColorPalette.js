@@ -2,11 +2,17 @@ import React, { useContext } from "react";
 import { Store } from "../Store";
 import { updateColor } from "../Actions";
 import ClassStyles from "../styles/styles.less";
-
+/**
+ * Color palette, can be customized and switched - the 
+ * output is what is saved in the frame array.
+ * 
+ * Can add more of less items too.
+ */
 export const ColorList = [
   "transparent",
   "#FFFFFF",
   "#E7C09D",
+  "#c5a487",
   "#8B5C33",
   "#5E2C00",
   "#FD7FFF",
@@ -18,7 +24,7 @@ export const ColorList = [
   "#33CC00",
   "#00CFFC",
   "#006FCF",
-  "#001FDE",
+  "#004b8c",
   "#4F00DF",
   "#A900DA",
   "#000000",

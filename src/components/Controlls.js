@@ -58,7 +58,10 @@ const Controlls = () => {
       default:
     }
   };
-
+  /**
+   * Need to clean up but for now basic ui
+   * more features to come, maybe subnavs
+   */
   return (
     <ul className={ClassStyles.controls}>
       <li>

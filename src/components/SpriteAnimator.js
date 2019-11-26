@@ -7,7 +7,7 @@ import ColorPalette from "./ColorPalette";
 import Controlls from "./Controlls";
 import ClassStyles from "../styles/styles.less";
 
-const ReactMatrix = props => {
+const SpriteAnimator = props => {
   const { state } = useContext(Store);
   const { width, height } = state;
   const { size = 22 } = props;
@@ -38,4 +38,4 @@ const ReactMatrix = props => {
   );
 };
 
-export default ReactMatrix;
+export default SpriteAnimator;

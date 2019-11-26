@@ -8,7 +8,7 @@ import CssFrame from "./CssFrame";
 */
 
 const AnimationWindow = props => {
-  const { size = 2 } = props;
+  const { size } = props;
   const { state } = useContext(Store);
   const { frames } = state;
   const [stepFrame, moveFrame] = useState(0);

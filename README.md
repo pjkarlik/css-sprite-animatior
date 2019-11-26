@@ -60,9 +60,9 @@ open http://localhost:2020
 
 ### Set-up of Application
 
-The set up is pretty simple, index.js loads ReactMatrix.js in Components.
+The set up is pretty simple, index.js loads ```SpriteAnimator.js`` in Components, which loads other UI components. 
 
-`src/index.js --> components/ReactMatrix.js`
+`src/index.js --> components/SpriteAnimator.js`
 
 I tried to break out the UI from the main framework to make it easier to play with the UX of and editor like this. Future plans include saving to db and export to gif.
 

@@ -191,7 +191,7 @@ const shiftFrame = (state, direction) => {
   };
 };
 /**
- * Mocking Context to work like Redux
+ * Reducers for state/actions
  */
 
 const reducer = (state, action) => {
