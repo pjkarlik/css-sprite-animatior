@@ -56,6 +56,13 @@ export const deleteFrame = dispatch => {
   });
 };
 
+export const exportFrames = dispatch => {
+  dispatch({
+    type: "EXPORT_FRAMES"
+  });
+};
+
+
 export const pasteFrame = dispatch => {
   dispatch({
     type: "PASTE_FRAME"

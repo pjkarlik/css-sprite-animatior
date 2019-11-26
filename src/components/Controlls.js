@@ -7,7 +7,8 @@ import {
   copyFrame,
   pasteFrame,
   deleteFrame,
-  shiftFrame
+  shiftFrame,
+  exportFrames
 } from "../Actions";
 import ClassStyles from "../styles/styles.less";
 
@@ -31,10 +32,10 @@ const Controlls = () => {
         saveFrame(dispatch);
         break;
       case 67:
-        if (metaKey) copyFrame(dispatch);
+        copyFrame(dispatch);
         break;
       case 86:
-        if (metaKey) pasteFrame(dispatch);
+        pasteFrame(dispatch);
         break;
       case 78:
         newFrame(dispatch);
@@ -137,17 +138,10 @@ const Controlls = () => {
           className={ClassStyles.links}
           href="#"
           role="button"
-          onClick={() => {}}
-        >
-          rotate
-        </a>
-      </li>
-      <li>
-        <a
-          className={ClassStyles.links}
-          href="#"
-          role="button"
-          onClick={() => {}}
+          onClick={(e) => {
+            e.preventDefault();
+            exportFrames(dispatch);
+          }}
         >
           export
         </a>

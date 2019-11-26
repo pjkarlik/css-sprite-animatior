@@ -14,8 +14,8 @@ export const clone = array => {
  * Set up Store with Config for Animation
  * Pixel grid width / height and blank array
  */
-const width = 8;
-const height = 8;
+const width = 16;
+const height = 16;
 const cellLength = width * height;
 const blankArray = [];
 for (let i = 0; i < cellLength; i++) {
@@ -42,6 +42,25 @@ const initialState = {
 };
 
 export const Store = createContext(initialState);
+
+const exportFrames = (state) => {
+  const { height, width, frames } = state;
+  const expportFrames = clone(frames);
+  console.log('generating frames');
+  let dataSet = expportFrames.map((frame) => {
+    return frame.map((still, index) => {
+      const x = index % width;
+      const y = (index - x) / height;
+      return {
+        x,
+        y,
+        color: still.color
+      };
+    });
+  });
+  window.open().document.write(JSON.stringify(dataSet));
+  return { ...state };
+};
 
 const updateCurrent = (state, index) => {
   const { frames } = state;
@@ -128,7 +147,6 @@ const pasteFrame = state => {
 
 const shiftFrame = (state, direction) => {
   const { height, width, canvasArray, frames, currentFrame } = state;
-  console.log(direction);
   const h = height - 1;
   const w = width - 1;
   const matrix = clone(canvasArray);
@@ -144,7 +162,6 @@ const shiftFrame = (state, direction) => {
         move = y + 1;
         head = move > h ? height - move : move;
         matrix[matrixExpand(x, y)] = source[matrixExpand(x, head)];
-        console.log(x, head);
         break;
       case "down":
         move = y - 1;
@@ -199,6 +216,8 @@ const reducer = (state, action) => {
       return copyFrame(state);
     case "PASTE_FRAME":
       return pasteFrame(state);
+    case "EXPORT_FRAMES":
+      return exportFrames(state);
     default:
       return state;
   }

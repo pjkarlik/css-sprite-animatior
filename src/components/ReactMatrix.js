@@ -10,7 +10,7 @@ import ClassStyles from "../styles/styles.less";
 const ReactMatrix = props => {
   const { state } = useContext(Store);
   const { width, height } = state;
-  const { size = 42 } = props;
+  const { size = 22 } = props;
 
   const previewContainer = size => {
     return {

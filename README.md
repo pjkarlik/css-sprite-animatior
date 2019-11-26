@@ -1,6 +1,6 @@
 ![travis ci build](https://travis-ci.org/pjkarlik/react-matrix.svg?branch=master&style=flat-square)
 
-![splash](./splash.gif)
+![splash](./splash.png)
 
 ![react](https://img.shields.io/badge/react-16.8.6-green.svg?style=flat-square)
 ![webpack](https://img.shields.io/badge/webpack-4.10.2-51b1c5.svg?style=flat-square)
@@ -8,9 +8,9 @@
 
 # CSS Sprite Animator
 
-CSS `box-shadow` pixel animation editor using React 16. Using state to edit, design and create pixel animations. I created this tool to model animations for Arduino/LED matrix displays. Props allow you to change dimentions, pixel size and palettes.
+CSS `box-shadow` pixel animation editor using React 16, state/context to emulate redux. You can edit, design and create pixel animations, then export the json array out. I created this tool to model animations for Arduino/LED matrix displays. Vars in the Store.js can allow you to change dimentions, pixel size and palettes. (some sizes are in CSS vars too - I know weird but working on it...)
 
-Each frame is saves as an 1D array, with each pixel in a continous _(x/y/color)_ object. That data is then turned into an inline CSS style which is applied to a DIV or other DOM element.
+Because of the limitations of Arduino I kept each frame as an 1D array, with each pixel saved as an _(x/y/color)_ object. That data is then turned into an inline CSS style which is applied to a DIV or other DOM element, or any other program you want. It's just a 2D coordinate and hex color.
 
 _example of a frame of animation_
 
@@ -31,16 +31,15 @@ inlineStyle = {
 
 ## Use
 
-Click anywhere on the grid to add a color, click again to erase or use a new color. Save takes the current dataArray to a single fame. You can also add a new frame and continue. The animation will start to play as soon as a second frame is created.
+Click anywhere on the grid to add a color, click again to erase or use a new color. You can also add a new frame, delete, save edits over and continue. The animation will start to play as soon as a second frame is created. Click 'NEW' to start fresh!
 
 ##### Keyboard Shortcuts
 
 - [arrow keys] position on grid
 - [n]ew frame
 - [s]ave frame
-- [backspace] delete frame
-- [os + c]opy frame
-- [os + v] paste frame
+- [c]opy frame
+- [v] paste frame
 
 ## Features
 
