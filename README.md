@@ -1,6 +1,6 @@
 ![travis ci build](https://travis-ci.org/pjkarlik/react-matrix.svg?branch=master&style=flat-square)
 
-![splash](./splash.png)
+![splash](./splash.gif)
 
 ![react](https://img.shields.io/badge/react-16.8.6-green.svg?style=flat-square)
 ![webpack](https://img.shields.io/badge/webpack-4.10.2-51b1c5.svg?style=flat-square)
