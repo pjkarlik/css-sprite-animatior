@@ -6,4 +6,8 @@
 @color-background: rgb(150, 150, 150);
 @color-surface: rgb(216, 216, 216);
 
-@size: 20px;
+@baseSize: 20;
+@size: unit(@baseSize, px);
+:export {
+  size: @baseSize;
+}

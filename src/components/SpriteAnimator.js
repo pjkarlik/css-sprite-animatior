@@ -6,11 +6,14 @@ import FramesWindow from "./FramesWindow";
 import ColorPalette from "./ColorPalette";
 import Controlls from "./Controlls";
 import ClassStyles from "../styles/styles.less";
+import { size } from '../styles/tokens.less';
 
 const SpriteAnimator = props => {
   const { state } = useContext(Store);
   const { width, height } = state;
-  const { size = 22 } = props;
+  // size of pixels of editible canvas
+  // add two for borders
+  const pixelSize = parseInt(size, 10) + 2;
 
   const previewContainer = size => {
     return {
@@ -24,7 +27,7 @@ const SpriteAnimator = props => {
       <div className={ClassStyles.container}>
         <Controlls />
         <ColorPalette />
-        <CanvasWindow size={size} />
+        <CanvasWindow size={pixelSize} />
 
         <div className={ClassStyles.preview} style={previewContainer(4)}>
           <AnimationWindow size={4} />

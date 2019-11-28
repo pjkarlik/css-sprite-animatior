@@ -17,22 +17,22 @@ const CanvasWindow = (props) => {
       const y = (index - x) / height;
       let object;
       object = (
-        <a 
-          key={`pixelButton-${x}-${y}`} 
+        <a
+          key={`pixelButton-${x}-${y}`}
           className={ClassStyles.box}
           style={{ background: cell.color }}
-          onClick= {() => {updatePixel(index, dispatch);}}>
-            &nbsp;
+          onClick={() => { updatePixel(index, dispatch); }}>
+          &nbsp;
         </a>
       );
 
       pixelRow.push(object);
-
+      console.log(size);
       if (x === width - 1) {
         const rowStyle = size > 0 ? `${size}px` : 'auto';
         const row = (
           <div className={size > 0 ?
-            ClassStyles.pixelrow : ClassStyles.row} style={{ height: rowStyle }} key={`row${y}`}>
+            ClassStyles.pixelrow : ClassStyles.row} style={{ height: size }} key={`row${y}`}>
             {pixelRow}
           </div>
         );
@@ -45,7 +45,7 @@ const CanvasWindow = (props) => {
 
   return (
     <div className={ClassStyles.canvas}
-      style={{width: `${size * width}px`, height: `${size * height}px`}}>
+      style={{ width: `${size * width}px`, height: `${size * height}px` }}>
       {generateFrame()}
     </div>
   );
