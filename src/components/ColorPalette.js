@@ -35,9 +35,9 @@ export const ColorList = [
 
 const ColorPalette = props => {
   const { state, dispatch } = useContext(Store);
-  const { currentColor } = state;
+  const { currentColor, palette } = state;
 
-  const colorpalette = ColorList.map(color => {
+  const colorpalette = palette.map(color => {
     const classString =
       `${ClassStyles.box} ${ClassStyles.plt} ` +
       `${color == currentColor ? ClassStyles.active : null} ` +

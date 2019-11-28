@@ -27,7 +27,6 @@ const CanvasWindow = (props) => {
       );
 
       pixelRow.push(object);
-      console.log(size);
       if (x === width - 1) {
         const rowStyle = size > 0 ? `${size}px` : 'auto';
         const row = (

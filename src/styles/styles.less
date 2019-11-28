@@ -21,6 +21,8 @@
   width: 86%
 }
 
+@colorPickerSize: 20px;
+
 .box {
   display: inline-block;
   height: @size;
@@ -39,8 +41,8 @@
     background: url("../../resources/images/check.png") !important;
   }
   &.plt {
-    width: 16px;
-    height: 16px;
+    width: @colorPickerSize;
+    height: @colorPickerSize;
     border: 1px solid @color-border;
     margin: 4px;
     &:hover {
@@ -61,7 +63,6 @@
 .pixelrow {
   .mandp();
   .fontNull();
-  height: @pxsize;
 }
 
 .canvas {
@@ -193,7 +194,7 @@
 .palette {
   display: inline-block;
   margin: 20px;
-  width: 53px;
+  width: 80px;
   vertical-align: top;
 }
 
@@ -231,17 +232,12 @@
   display: none;
 }
 
-@pxsize: 4px;
-
 .pixel {
   box-sizing: border-box;
   display: inline-block;
-  height: @pxsize;
-  width: @pxsize;
 }
 .pixelrow {
   .mandp();
   .fontNull();
   box-sizing: border-box;
-  height: @pxsize;
 }

@@ -35,6 +35,7 @@ const initialState = {
   width,
   height,
   currentFrame: 0,
+  palette: ColorList,
   currentColor: ColorList[1],
   canvasArray: f[0],
   copyArray: clone(blankArray),
