@@ -215,8 +215,6 @@ const reducer = (state, action) => {
       return updatePixel(state, action.index);
     case "SHIFT_FRAME":
       return shiftFrame(state, action.direction);
-    case "SAVE_FRAME":
-      return saveFrame(state);
     case "NEW_FRAME":
       return newFrame(state);
     case "ADD_FRAME":
