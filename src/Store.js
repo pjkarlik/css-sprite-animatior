@@ -127,14 +127,6 @@ const addFrame = state => {
   return { ...state, ...config };
 };
 
-const saveFrame = state => {
-  const { frames, currentFrame, canvasArray } = state;
-  const saveFrames = clone(frames);
-  saveFrames[currentFrame] = clone(canvasArray);
-
-  return { ...state, frames: saveFrames };
-};
-
 const deleteFrame = state => {
   const { frames, currentFrame } = state;
   if (currentFrame === 0 && frames.length < 2) return state;

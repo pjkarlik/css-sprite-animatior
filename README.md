@@ -31,13 +31,12 @@ inlineStyle = {
 
 ## Use
 
-Click anywhere on the grid to add a color, click again to erase or use a new color. You can also add a new frame, delete, save edits over and continue. The animation will start to play as soon as a second frame is created. Click 'NEW' to start fresh!
+Click anywhere on the grid to add a color, click again to erase or use a new color. You can also add a new frame, delete, copy and paste. The animation will start to play as soon as a second frame is created. Click 'NEW' to start fresh!
 
 ##### Keyboard Shortcuts
 
 - [arrow keys] position on grid
 - [n]ew frame
-- [s]ave frame
 - [c]opy frame
 - [v] paste frame
 
@@ -60,7 +59,7 @@ open http://localhost:2020
 
 ### Set-up of Application
 
-The set up is pretty simple, index.js loads ```SpriteAnimator.js`` in Components, which loads other UI components. 
+The set up is pretty simple, index.js loads ``SpriteAnimator.js` in Components, which loads other UI components.
 
 `src/index.js --> components/SpriteAnimator.js`
 
