@@ -4,7 +4,7 @@ import { ColorList } from "./components/ColorPalette";
 /* Import Animation to Build */
 
 import frames from "./animations/RunningMan16x16";
-
+//import frames from "./animations/ManFrame16x16";
 /* simple deep clone function */
 export const clone = array => {
   return JSON.parse(JSON.stringify(array));
@@ -44,19 +44,34 @@ const initialState = {
 
 export const Store = createContext(initialState);
 
-const exportFrames = (state) => {
+const hexToRgb = hex => {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result /* eslint-disable */
+    ? [
+        parseInt(result[1], 16),
+        parseInt(result[2], 16),
+        parseInt(result[3], 16)
+      ]
+    : [-1, -1, -1];
+}; /* eslint-enable */
+
+const exportFrames = state => {
   const { height, width, frames } = state;
   const expportFrames = clone(frames);
-  console.log('generating frames');
-  let dataSet = expportFrames.map((frame) => {
+  console.log("generating frames");
+  let dataSet = expportFrames.map(frame => {
     return frame.map((still, index) => {
       const x = index % width;
       const y = (index - x) / height;
-      return {
+
+      const objectPixel = {
         x,
         y,
         color: still.color
       };
+
+      // const objectPixel = hexToRgb(still.color);
+      return objectPixel;
     });
   });
   window.open().document.write(JSON.stringify(dataSet));
@@ -77,7 +92,8 @@ const updateColor = (state, color) => {
 };
 
 const updatePixel = (state, index) => {
-  const { canvasArray, currentColor } = state;
+  const { frames, currentFrame, canvasArray, currentColor } = state;
+  const saveFrames = clone(frames);
   let tempArray = clone(canvasArray);
 
   if (tempArray[index].color !== currentColor) {
@@ -86,7 +102,8 @@ const updatePixel = (state, index) => {
     tempArray[index].color = "transparent";
   }
 
-  return { ...state, canvasArray: tempArray };
+  saveFrames[currentFrame] = tempArray;
+  return { ...state, canvasArray: tempArray, frames: saveFrames };
 };
 
 const newFrame = state => {
@@ -114,6 +131,7 @@ const saveFrame = state => {
   const { frames, currentFrame, canvasArray } = state;
   const saveFrames = clone(frames);
   saveFrames[currentFrame] = clone(canvasArray);
+
   return { ...state, frames: saveFrames };
 };
 

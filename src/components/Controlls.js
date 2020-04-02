@@ -94,18 +94,6 @@ const Controlls = () => {
           href="#"
           role="button"
           onClick={() => {
-            saveFrame(dispatch);
-          }}
-        >
-          save
-        </a>
-      </li>
-      <li>
-        <a
-          className={ClassStyles.links}
-          href="#"
-          role="button"
-          onClick={() => {
             deleteFrame(dispatch);
           }}
         >
@@ -141,7 +129,7 @@ const Controlls = () => {
           className={ClassStyles.links}
           href="#"
           role="button"
-          onClick={(e) => {
+          onClick={e => {
             e.preventDefault();
             exportFrames(dispatch);
           }}

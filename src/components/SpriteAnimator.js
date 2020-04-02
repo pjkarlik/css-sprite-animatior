@@ -14,14 +14,18 @@ const SpriteAnimator = props => {
   // size of pixels of editible canvas
   // add two for borders
   const pixelSize = parseInt(size, 10) + 2;
-
+  // size for preview container
+  // cause when doing css box-shadow 
+  // sprites the div is only as big 
+  // as the pixel size
   const previewContainer = size => {
     return {
       width: size * width,
       height: size * height
     };
   };
-
+  // preview animation pixel size 
+  const pvSize = 4;
   return (
     <div className={ClassStyles.appcontainer}>
       <div className={ClassStyles.container}>
@@ -29,13 +33,10 @@ const SpriteAnimator = props => {
         <ColorPalette />
         <CanvasWindow size={pixelSize} />
 
-        <div className={ClassStyles.preview} style={previewContainer(4)}>
-          <AnimationWindow size={4} />
+        <div className={ClassStyles.preview} style={previewContainer(pvSize)}>
+          <AnimationWindow size={pvSize} />
         </div>
-
-        <div className={ClassStyles.framescontainer} style={{ width: 500 }}>
-          <FramesWindow size={2} />
-        </div>
+        <FramesWindow size={2} />
       </div>
     </div>
   );
