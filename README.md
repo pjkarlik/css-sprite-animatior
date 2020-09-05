@@ -2,13 +2,13 @@
 
 ![splash](./splash.gif)
 
-![react](https://img.shields.io/badge/react-16.8.6-green.svg?style=flat-square)
-![webpack](https://img.shields.io/badge/webpack-4.10.2-51b1c5.svg?style=flat-square)
+![react](https://img.shields.io/badge/react-16.13.1-green.svg?style=flat-square)
+![webpack](https://img.shields.io/badge/webpack-4.44.1-51b1c5.svg?style=flat-square)
 ![stage-0](https://img.shields.io/badge/ECMAScript-6-c55197.svg?style=flat-square)
 
 # CSS Sprite Animator
 
-CSS `box-shadow` pixel animation editor using React 16, state/context to emulate redux. You can edit, design and create pixel animations, then export the json array out. I created this tool to model animations for Arduino/LED matrix displays. Vars in the Store.js can allow you to change dimentions, pixel size and palettes. (some sizes are in CSS vars too - I know weird but working on it...)
+CSS `box-shadow` pixel animation editor using React 16, state/context. You can edit, design and create pixel animations, then export the json array out. I created this tool to model animations for Arduino/LED matrix displays and other hardware proejcts. Vars in the Store.js can allow you to change dimensions, pixel size and color palettes used. (some sizes are also in CSS vars too - I know weird but working on it...)
 
 Because of the limitations of Arduino I kept each frame as an 1D array, with each pixel saved as an _(x/y/color)_ object. That data is then turned into an inline CSS style which is applied to a DIV or other DOM element, or any other program you want. It's just a 2D coordinate and hex color.
 
@@ -48,11 +48,11 @@ Click anywhere on the grid to add a color, click again to erase or use a new col
 
 ## Run the example
 
-Requires Node v10.15.3 or greater.
+Requires Node v12.18.3 or greater.
 
 ```bash
-$ yarn
-$ yarn start
+$ npm install
+$ npm start
 ```
 
 open http://localhost:2020
