@@ -1,4 +1,4 @@
-![travis ci build](https://travis-ci.org/pjkarlik/css-sprite-animator.svg?branch=master&style=flat-square)
+![travis ci build](https://travis-ci.org/pjkarlik/css-sprite-animatior.svg?branch=master&style=flat-square)
 
 ![splash](./splash.gif)
 
